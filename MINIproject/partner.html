@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors and Partners - Bangkok University</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(54, 54, 54);
+            color: rgb(54, 54, 54);
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(54, 54, 54);
+            z-index: -1;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 15px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ccc;
+        }
+        nav ul li::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        nav ul li:hover::after {
+            width: 100%;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        nav ul li:hover .dropdown {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dropdown a {
+            display: block;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .dropdown a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .register-button {
+            background-color: #ffcc00;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-left: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .register-button:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #252729;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+        h1, h2 {
+            color: #727a83;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: white;
+        }
+        .sponsors, .partners {
+            margin-bottom: 40px;
+        }
+        .sponsor-list, .partner-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .sponsor, .partner {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #252729;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0);
+            opacity: 0; 
+            animation: fadeIn 0.5s forwards; 
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px); 
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); 
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 5px; 
+            background-color: rgb(54, 54, 54);
+            margin-top: 30px;
+            color: rgb(255, 251, 251);
+            font-size: 14px; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://bulinks.bu.ac.th/storage/2024/02/logo-bu-white-horizontal-300x98-1.webp" alt="Bangkok University Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="profile.html">Speaker Profiles</a></li>
+                <li><a href="workshop.html">Workshops</a></li>
+                <li>
+                    <a href="#">More</a>
+                    <div class="dropdown">
+                        <a href="news.html">News</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="partner.html">Partner</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="faq.html">FAQs</a>
+                        <a href="feedback.html">Feedback</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="Registration.html" class="register-button">Register Now</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="sponsors">
+            <h2>Our Sponsors</h2>
+            <div class="sponsor-list">
+                <div class="sponsor">
+                    <img src="https://contents.bu.ac.th/contents/images/mous/51784e96-c023-4769-bb9b-cb82490e4169.webp" alt="Sponsor 1 Logo">
+                    <p>Sponsor 1 GDH</p>
+                    ร่วมมือกับ: คณะดิจิทัลมีเดียและศิลปะภาพยนตร์
+                </div>
+                <div class="sponsor">
+                    <img src="https://contents.bu.ac.th/contents/images/mous/994191f8-e50b-4e09-bbb0-5d2f336f8011.webp" alt="Sponsor 2 Logo">
+                    <p>Sponsor 2 Warner Bros. Pictures Thailand</p>
+                    ร่วมมือกับ: คณะดิจิทัลมีเดียและศิลปะภาพยนตร์
+                </div>
+                <div class="sponsor">
+                    <img src="https://contents.bu.ac.th/contents/images/mous/20db9450-a6e1-4021-b382-1942cec1ce45.jpg" alt="Sponsor 3 Logo">
+                    <p>Sponsor 3 Major</p>
+                    ร่วมมือกับ: คณะบริหารธุรกิจ, คณะดิจิทัลมีเดียและศิลปะภาพยนตร์, คณะการสร้างเจ้าของธุรกิจและการบริหารกิจการ, คณะเทคโนโลยีสารสนเทศและนวัตกรรม
+                </div>
+            </div>
+        </section>
+        
+        <section class="partners">
+            <h2>Our Partners</h2>
+            <div class="partner-list">
+                <div class="partner">
+                    <img src="https://contents.bu.ac.th/contents/images/mous/a23671bb-79fb-4d40-bc00-fc3060fce6d0.jpg" alt="Partner 1 Logo">
+                    <p>Partner 1 ธนาคารกรุงเทพ จำกัด (มหาชน)</p>
+                    ร่วมมือกับ: คณะบริหารธุรกิจ
+                </div>
+                <div class="partner">
+                    <img src="https://contents.bu.ac.th/contents/images/mous/08f5ebee-8cc6-40e5-83ca-7cd5da9d63fc.jpg" alt="Partner 2 Logo">
+                    <p>Partner 2 ลาซาด้า</p>
+                    ร่วมมือกับ: คณะบริหารธุรกิจ
+                </div>
+                <div class="partner">
+                    <img src="https://contents.bu.ac.th/contents/images/mous/480959d9-a658-4740-9074-e37d74fdaa40.jpg" alt="Partner 3 Logo">
+                    <p>Partner 3 The Pizza Company</p>
+                    ร่วมมือกับ: คณะบริหารธุรกิจ
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bangkok University. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

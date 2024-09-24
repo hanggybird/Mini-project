@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Open House - Bangkok University</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://openhouse.bu.ac.th/contents/banner/banner_2.jpg?4');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-size: 16px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: -1; 
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+            opacity: 1;
+            animation: none;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 15px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ccc;
+        }
+        nav ul li::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        nav ul li:hover::after {
+            width: 100%;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        nav ul li:hover .dropdown {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dropdown a {
+            display: block;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: backgrounds 0.3s;
+        }
+        .dropdown a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .register-button {
+            background-color: #ffcc00;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-left: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .register-button:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #252729;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+        h1, h2 {
+            color: white;
+            opacity: 0;
+            animation: fadeIn 0.4s forwards; 
+        }
+        h1 {
+            animation-delay: 0.1s; 
+        }
+        h2 {
+            animation-delay: 0.2s; 
+        }
+        p {
+            opacity: 0;
+            animation: fadeIn 0.4s forwards; 
+            animation-delay: 0.3s; 
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.4s forwards; 
+        }
+        .fade-in:nth-child(1) { animation-delay: 0.3s; } 
+        .fade-in:nth-child(2) { animation-delay: 0.4s; } 
+        .fade-in:nth-child(3) { animation-delay: 0.5s; } 
+        .fade-in:nth-child(4) { animation-delay: 0.6s; } 
+        img {
+            max-width: 90%;
+            border-radius: 5px;
+            margin: 10px auto;
+            display: block;
+            opacity: 0;
+            animation: fadeIn 0.4s forwards; 
+            animation-delay: 0.7s; 
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #252729;
+            margin-top: 30px;
+            color: #ffffff;
+        }
+        strong {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://bulinks.bu.ac.th/storage/2024/02/logo-bu-white-horizontal-300x98-1.webp" alt="Bangkok University Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="profile.html">Speaker Profiles</a></li>
+                <li><a href="workshop.html">Workshops</a></li>
+                <li>
+                    <a href="">More</a>
+                    <div class="dropdown">
+                        <a href="news.html">news</a>   
+                        <a href="gallery.html">Gallery</a>
+                        <a href="partner.html">Partner</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="faq.html">FAQs</a>           
+                        <a href="feedback.html">Feedback</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="Registration.html" class="register-button">Register Now</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>About the Open House</h1>
+        <p class="fade-in">ยินดีต้อนรับสู่ งาน Open House ของมหาวิทยาลัยกรุงเทพ! งานนี้จัดขึ้นเพื่อเปิดโอกาสให้นักเรียน นักศึกษา และผู้สนใจได้ทำความรู้จักกับมหาวิทยาลัยของเราอย่างใกล้ชิด</p>
+        
+        <h2>Purpose of the Event</h2>
+        <p class="fade-in">งาน Open House ของมหาวิทยาลัยกรุงเทพจัดขึ้นเพื่อให้ผู้เข้าร่วมได้รับข้อมูลและประสบการณ์ที่เป็นประโยชน์ในด้านการศึกษา โดยมีวัตถุประสงค์หลักดังนี้:</p>
+        <ul>
+            <li class="fade-in"><strong>เปิดโอกาสให้รู้จักมหาวิทยาลัย</strong>: เพื่อให้ผู้เข้าร่วมสามารถทำความรู้จักกับสภาพแวดล้อม การเรียนการสอน</li>
+            <li class="fade-in"><strong>สำรวจหลักสูตรการศึกษา</strong>: ให้ข้อมูลเกี่ยวกับหลักสูตรต่างๆ ที่เปิดสอน พร้อมทั้งแนะนำเส้นทางอาชีพที่เกี่ยวข้อง</li>
+            <li class="fade-in"><strong>ข้อมูลการสมัครเรียน</strong>: ให้ข้อมูลเกี่ยวกับขั้นตอนการสมัครเรียน รวมถึงทุนการศึกษาที่สามารถเข้าถึงได้</li>
+        </ul>
+        
+        <h2>What Attendees Can Expect</h2>
+        <p class="fade-in">ในงาน Open House ของมหาวิทยาลัยกรุงเทพ ผู้เข้าร่วมสามารถคาดหวังได้ถึงกิจกรรมและโอกาสต่างๆ ดังนี้:</p>
+        <ul>
+            <li class="fade-in"><strong>ทัวร์ชมมหาวิทยาลัย</strong>: สำรวจบรรยากาศและสิ่งอำนวยความสะดวกภายในมหาวิทยาลัยผ่านการทัวร์ที่นำโดยนักศึกษา</li>
+            <li class="fade-in"><strong>สัมมนาข้อมูล</strong>: เข้าร่วมสัมมนาที่ให้ข้อมูลเกี่ยวกับหลักสูตรการศึกษา ข้อกำหนดการสมัครเรียน และเส้นทางอาชีพ</li>
+            <li class="fade-in"><strong>โอกาสในการสร้างเครือข่าย</strong>: พบปะและพูดคุยกับคณาจารย์ นักศึกษา และผู้เข้าร่วมคนอื่น ๆ เพื่อสร้างความสัมพันธ์และสอบถามข้อมูล</li>
+            <li class="fade-in"><strong>การอบรมและสาธิต</strong>: มีการจัดอบรมเชิงปฏิบัติการและการสาธิตที่แสดงถึงโครงการและงานวิจัย
+
+
+        <img src="https://connect.bu.ac.th/storage/2023/12/N-08.jpg" alt="Bangkok University Image">
+        <img src="https://mthai.com/app/uploads/2019/08/cropped-OPEN-HOUSE_BU_Thumbnail.jpg" alt="Open House Event Image">
+
+        <p>เราขอเชิญคุณเข้าร่วมกับเราเพื่อสำรวจและเรียนรู้ที่มหาวิทยาลัยกรุงเทพ!</p>
+        
+        <footer>
+            <p>© 2024 Bangkok University. All rights reserved.</p>
+        

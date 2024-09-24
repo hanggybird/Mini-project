@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok University Openhouse</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #000000;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url('https://openhouse.bu.ac.th/contents/banner/banner_2.jpg?4');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 0; 
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        nav ul li::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px; 
+            left: 0;
+        }
+
+        nav ul li:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown a {
+            display: block;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .dropdown a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .register-button {
+            background-color: #ffcc00; 
+            color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-left: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .register-button:hover {
+            background-color: #e6b800; 
+            transform: scale(1.05);
+        }
+
+        .background-shape {
+            position: relative;
+            background-color: #ffffff; 
+            border-radius: 20px;
+            padding: 60px;
+            width: 500px; 
+            text-align: center;
+            color: rgb(0, 0, 0); 
+            z-index: 1;
+            margin: auto; 
+            margin-top: 150px; 
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+        }
+
+        h1, .label, .input-field, .register-button {
+            opacity: 0; 
+            transform: translateX(-50px); 
+            animation: fadeInLeft 0.6s forwards; 
+        }
+
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+        }
+
+        .form-container {
+            width: 100%;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 18px;
+            color: rgb(0, 0, 0); 
+            margin-bottom: 5px;
+        }
+
+        input[type="email"], input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.1); 
+            color: #000000; 
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            width: 90%;
+            padding: 15px;
+            background-color: #000000; 
+            color: #ffffff; 
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            opacity: 0; 
+            transform: translateX(-50px); 
+            animation: fadeInLeft 0.6s forwards; 
+        }
+
+        button[type="submit"]:hover {
+            background-color: #e6b800; 
+            color: #000000; 
+        }
+
+        button[type="submit"] {
+            animation-delay: 0s; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://bulinks.bu.ac.th/storage/2024/02/logo-bu-white-horizontal-300x98-1.webp" alt="Bangkok University Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="profile.html">Speaker Profiles</a></li>
+                <li><a href="workshop.html">Workshops</a></li>
+                <li>
+                    <a href="#">More</a>
+                    <div class="dropdown">
+                        <a href="news.html">news</a>   
+                        <a href="gallery.html">Gallery</a>
+                        <a href="partner.html">Partner</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="faq.html">FAQs</a>           
+                        <a href="feedback.html">Feedback</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="Registration.html" class="register-button">Register Now</a>
+        </nav>
+    </header>
+
+    <div class="background-shape">
+        <h1>REGISTER</h1>
+        <div class="form-container">
+            <form action="#">
+                <div class="input-group">
+                    <label class="label" for="name">Name</label>
+                    <input type="text" class="input-field" placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label class="label" for="email">E-Mail</label>
+                    <input type="email" class="input-field" placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="register-button">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

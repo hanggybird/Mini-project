@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok University Open House</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: rgb(54, 54, 54);
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto; 
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 15px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ccc;
+        }
+        nav ul li::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        nav ul li:hover::after {
+            width: 100%;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        nav ul li:hover .dropdown {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dropdown a {
+            display: block;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .dropdown a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .register-button {
+            background-color: #ffcc00;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-left: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .register-button:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            background: #252729;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #252729;
+            color: white;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://bulinks.bu.ac.th/storage/2024/02/logo-bu-white-horizontal-300x98-1.webp" alt="Bangkok University Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="profile.html">Speaker Profiles</a></li>
+                <li><a href="workshop.html">Workshops</a></li>
+                <li>
+                    <a href="#">More</a>
+                    <div class="dropdown">
+                        <a href="news.html">News</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="partner.html">Partners</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="faq.html">FAQs</a>
+                        <a href="feedback.html">Feedback</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="Registration.html" class="register-button">Register Now</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="activities">
+            <h1>Workshops and Activities</h1>
+            <img src="https://scontent.fbkk12-1.fna.fbcdn.net/v/t39.30808-6/450362585_878061211024974_5324147857332900304_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=AUz3n9baLQAQ7kNvgEPxa1S&_nc_ht=scontent.fbkk12-1.fna&_nc_gid=AjR_z0X5e9QX8gCTnWJTfBL&oh=00_AYB40OIh5TDCmgbRF05R-kvN7yoKH9g_M0zaIWqLXZ-RIQ&oe=66F59536" alt="กิจกรรม BU Open House">
+            <p>ทีม Cybersecurity หรือผู้ดูแลความมั่นคงปลอดภัยไซเบอร์ ตำแหน่งงานสำคัญที่ทุกองค์กรต้องมี เพื่อป้องกันระบบข้อมูลอย่างแข็งแกร่ง ต่อสู้กับมิจฉาชีพที่หลอกลวงสร้างความเสียหาย ทั้งในระดับบุคคลและองค์กรที่หนักหน่วงขึ้นทุกวัน สาขาวิชาวิทยาการคอมพิวเตอร์ มุ่งเน้นวิทยาการข้อมูลและความมั่นคงปลอดภัยไซเบอร์ คณะเทคโนโลยีสารสนเทศและนวัตกรรม มหาวิทยาลัยกรุงเทพ เป็นหลักสูตรที่ทันสมัย ด้วยการเรียนการสอนที่เข้มข้นและอินไซท์การทำงานจริง ให้นักศึกษาจบไปพร้อมแก้ไขปัญหาได้อย่างตรงจุด จะน่าสนใจแค่ไหน เราไปดูกันเลย</p>
+            
+            <img src="https://scontent.fbkk8-3.fna.fbcdn.net/v/t39.30808-6/449143164_868928531938242_5228777923328453726_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=t2VkGDeIZpAQ7kNvgEOIUbm&_nc_ht=scontent.fbkk8-3.fna&_nc_gid=A0tXnO2Exr6Sc0Lg5bG-8aZ&oh=00_AYBA5MfADZBRfvzmEbiBG8oE85nxDgdrrCGZH2c30zt5Sw&oe=66F5BE1D" alt="กิจกรรม BU Open House">
+            <p>ใครชอบทำกิจกรรมหรือพบเจอกับเพื่อนใหม่นอกคณะ กิจกรรมเหล่านี้จะทำให้ทุกคนได้รู้จักเพื่อนมากขึ้น ที่ BU เรามีชมรมมากมายซึ่งเป็นกิจกรรมนักศึกษาที่รวมกลุ่มทำในสิ่งที่ชอบเหมือนกัน เช่น Creative Dance ชมรมดนตรีสากล BUMP (กิจกรรมหนังสั้น) ค่ายอาสา เป็นต้น แล้วจะรู้ได้ยังไงว่ามีชมรมอะไรบ้าง? ในทุกปีจะมีอีเว้นท์รวบรวมทุกชมรมมาเปิดรับสมาชิกใหม่ ให้ทุกคนได้เดินพูดคุยกับรุ่นพี่ก่อนเข้าร่วมชมรม</p>
+            
+            <img src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/448329556_861936112637484_213010028395277589_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=7b4sKcMGnssQ7kNvgGKtQaq&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=As1FRwUzg7HC5R_WQoxk5lm&oh=00_AYACLYnMtkxu2ptR4CUFRI92J56wDj_XNzvjyM8D3dhv6Q&oe=66F5BCFC" alt="กิจกรรม BU Open House">
+            <p>สายงานบริการ อยากเรียนรู้การทำงานโรงแรมแบบจัดเต็มครบทุกด้าน แนะนำสาขาวิชาการจัดการการโรงแรม คณะมนุษยศาสตร์และการจัดการการท่องเที่ยว มหาวิทยาลัยกรุงเทพ โดยมีให้น้องๆ ได้เลือกเรียนตามความสนใจทั้งหมด 4 Tracks ได้แก่ Food & Beverage, Wellness & Spa, Entrepreneur และ Banquet & Catering มาดูกันว่าแต่ละด้านมีความน่าสนใจยังไง ไปดูกันเลย</p>
+        
+            </section>
+
+        <section id="workshops">
+            <h2>เวิร์กชอป</h2>
+            <img src="https://scontent.fbkk12-1.fna.fbcdn.net/v/t39.30808-6/452446055_888217340009361_4725220670247742024_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YH6WkBXXJtEQ7kNvgGpmFXE&_nc_ht=scontent.fbkk12-1.fna&_nc_gid=Ayr1J1XpEb2XVv-QizegN6y&oh=00_AYALZqa2vcDvWbK5tV5LHOYJsevygnFRehuGUoVfQfr7Lg&oe=66F59FD4" alt="เวิร์กชอป BU Open House">
+            <p>การใช้เสียงในการร้องเพลง : “Your Voice” Singing Workshop”
+                ชวนน้องๆ ที่รักในการร้องเพลง มาลองฝึกให้โปรมากขึ้น ที่ห้องเรียน Voice Workshop มาฝึกการร้องเพลงให้แข็งแรง มาลองเรียนรู้การเปล่งเสียงร้องที่ถูกต้อง ลองหายใจอย่างถูกวิธีที่เป็นพื้นฐานของการใช้เสียง และมาลองหาคีย์ โทนเสียงที่เหมาะกับช่องเสียงของตัวเอง ช่วยให้น้องๆ ค้นหาโทนเสียงของตัวเองเจอ แล้วนำไปปรับใช้เสียงในการแสดง หรือการร้องเพลงต่อไปในอนาคตตามที่ชอบได้
+                </p>
+                
+            <img src="https://scontent.fbkk8-3.fna.fbcdn.net/v/t39.30808-6/452368681_887541066743655_1036774616058364883_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=VWl6P6rEyCkQ7kNvgHdtvRa&_nc_ht=scontent.fbkk8-3.fna&_nc_gid=AWl_SWagtO8XAJ2CjgWUa-x&oh=00_AYDNTPb0El7wkcUzVTldM375jioV_peXm9J5hEbhfmNDRg&oe=66F593BB" alt="เวิร์กชอป BU Open House">
+            <p>เทคนิคการวิเคราะห์และการนำเสนอข้อมูล (Data Science and Data Visualization)
+                ใครเป็นสายวิเคราะห์ข้อมูล ชอบแหวกว่ายในโลกของ Big Data แล้วยังสนใจเรื่องของโปรแกรมเมอร์ ห้ามพลาดกับ Workshop ของสาขาวิทยาการคอมพิวเตอร์นี้ น้อง ๆ ที่เข้าร่วมจะได้รับประสบการณ์ปฏิบัติงานจริง และได้เรียนรู้ทักษะอาชีพด้าน Data Science
+                </p>
+
+            <img src="https://scontent.fbkk12-4.fna.fbcdn.net/v/t39.30808-6/452288904_887541126743649_3994763063208706385_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Krpe8vCG-KYQ7kNvgE3QzW2&_nc_ht=scontent.fbkk12-4.fna&_nc_gid=AwT1-kvfpJvLvUgoOm2nR9Z&oh=00_AYCqnC0igdHBmoSHqddNI5ufEmfSh8yy2jJs07zLLcKDIg&oe=66F5BE94">
+            <p>ทคนิคการพัฒนาระบบและเป็นผู้ปกป้องหมวกขาวในโลกไซเบอร์ (White Hacker)
+                ใครที่สนใจเรื่องไอที เป็นคนชอบใส่ใจเรื่อง Bug อยากลองเป็นนักเจาะระบบ (ในทางที่ดี) ที่เรียกว่า White Hat Hacker ให้มาลองลงมือปฏิบัติของจริง และฝึกฝนทักษะที่จำเป็นสำหรับชาว White Hat Hero โดยเฉพาะเรื่องการรักษาความปลอดภัยทางไซเบอร์
+                
+                </p>
+            <ul>
+                <li>
+                    <h3>การเขียนโปรแกรมเบื้องต้น</h3>
+                    <p>วันที่: 29 สิงหาคม 2024</p>
+                    <p>เวลา: 10:00 - 12:00 น.</p>
+                </li>
+                <li>
+                    <h3>การขับร้องเพลงและออกเสียงให้ถูกต้อง</h3>
+                    <p>วันที่: 29 สิงหาคม 2024</p>
+                    <p>เวลา: 13:00 - 15:00 น.</p>
+                </li>
+                <li>
+                    <h3>การพูดในที่สาธารณะ</h3>
+                    <p>วันที่: 30 สิงหาคม 2024</p>
+                    <p>เวลา: 09:00 - 11:00 น.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bangkok University. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+            });
+
+            setTimeout(() => {
+                sections.forEach(section => {
+                    section.classList.add('visible');
+                });
+            }, 100); 
+        });
+    </script>
+</body>
+</html>

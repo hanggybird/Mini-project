@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Bangkok University</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://openhouse.bu.ac.th/contents/banner/banner_2.jpg?4');
+            margin: 0;
+            padding: 0;
+            color: white;
+            line-height: 1.6;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 15px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ccc;
+        }
+        nav ul li::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        nav ul li:hover::after {
+            width: 100%;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        nav ul li:hover .dropdown {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dropdown a {
+            display: block;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .dropdown a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .register-button {
+            background-color: #ffcc00;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-left: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .register-button:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+        .gallery-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #252729;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            opacity: 0; 
+            transform: translateY(20px); 
+            animation: fadeInUp 0.6s forwards; 
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-item p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .gallery-item:hover p {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://bulinks.bu.ac.th/storage/2024/02/logo-bu-white-horizontal-300x98-1.webp" alt="Bangkok University Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="profile.html">Speaker Profiles</a></li>
+                <li><a href="workshop.html">Workshops</a></li>
+                <li>
+                    <a href="#">More</a>
+                    <div class="dropdown">
+                        <a href="news.html">news</a>   
+                        <a href="gallery.html">Gallery</a>
+                        <a href="partner.html">Partner</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="faq.html">FAQs</a>           
+                        <a href="feedback.html">Feedback</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="Registration.html" class="register-button">Register Now</a>
+        </nav>
+    </header>
+
+    <div class="gallery-container">
+        <h1>Gallery of Past Events</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://contents.bu.ac.th/uploads/files/1667959159_NMCYIVN5JH.png" alt="Event 1">
+                <p>คณะบัญชี มีการสอนทำบัญชีเบื้องต้น</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://contents.bu.ac.th/uploads/files/1667979926_DBJ2EKBVGV.png" alt="Event 2">
+                <p>คณะเศรษฐศาสตร์ มีการสอนหุ้นเบื้องต้น</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://contents.bu.ac.th/uploads/files/1667979946_8PMSA4XIQH.png" alt="Event 3">
+                <p>คณะวิทยาลัยนานาชาติจีน มีการแสดงเชิดสิงโต</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://contents.bu.ac.th/uploads/files/1667962056_ALO9QUTGAU.png" alt="Event 4">
+                <p>คณะบริหารธุรกิจ มีการบรรยายจากศิษย์เก่า</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://contents.bu.ac.th/uploads/files/1667962241_PQT4WRTGA4.png" alt="Event 5">
+                <p>สาขาวิชาเกมและสื่อเชิงโต้ตอบ มีการจัดกิจกรรมให้ทดลองเขียนโปรแกรม และใช้งานจริง</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://contents.bu.ac.th/uploads/files/1667962671_CVCCGLOK7F.png" alt="Event 6">
+                <p>วิชาการจัดการธุรกิจสายการบิน มีการอธิบายการบินเบื้องต้น</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://contents.bu.ac.th/uploads/files/1667963410_TB0WQVINCZ.png" alt="Event 7">
+                <p>คณะนิเทศศาสตร์ มีการจัดกิจกรรมคอนเสิร์ต</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://contents.bu.ac.th/uploads/files/1667962913_KYMLG3FUDF.png" alt="Event 8">
+                <p>คณะเทคโนโลยีสารสนเทศและนวัตกรรม มีการจัดกิจกรรมการใช้งานRobot</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://contents.bu.ac.th/uploads/files/1667964340_NNQK9RIAWJ.png" alt="Event 9">
+                <p>คณะอักษรศาสตร์ เป็นกิจกรรมชวนชิมร้านอาหารหน้าใหม่</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html
